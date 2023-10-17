@@ -15,7 +15,6 @@
                     <a href="" class="mr-3 hover:underline">Tanya</a>
                     <a href="" class="hover:underline">Jawab</a>
                   </div>
-                  
                 </div>
               </div>
   
@@ -72,7 +71,7 @@
                           </button>
                           <button 
                           @click="toggleTextVisibility" 
-                          class="text-blue-700 mb-2 ml-2 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2 text-center inline-flex items-center hs-accordion-toggle hs-accordion-active:text-blue-600 group   gap-x-3  transition  dark:hs-accordion-active:text-blue-600 dark:text-gray-200 dark:hover:text-gray-400" 
+                          class="text-blue-700  mb-2 ml-2 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2 text-center inline-flex items-center hs-accordion-toggle hs-accordion-active:text-blue-600 group   gap-x-3  transition  dark:hs-accordion-active:text-blue-600 dark:text-gray-200 dark:hover:text-gray-400" 
                           aria-controls="hs-basic-collapse-one">
                             <img src="/image/Chat.png" class="w-5" style="width: 20px;" alt="">
                             <p class="px-3">4</p>

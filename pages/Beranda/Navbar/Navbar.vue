@@ -17,7 +17,7 @@
                   <li class="relative">
                       <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-600" type="button">
                         <span class="sr-only">Open user menu</span>
-                        <img class="w-10 h-10 rounded-full" src="image/esa.png" alt="user photo">
+                        <img class="w-10 h-10 rounded-full" src="/image/esa.png" alt="user photo">
                       </button>
                       <Dropdown></Dropdown>
                     </li>
