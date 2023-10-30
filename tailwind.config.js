@@ -8,6 +8,7 @@ export default {
     "./pages/app.vue",
     "./node_modules/flowbite/**/*.{js,ts}",
     'node_modules/preline/dist/*.js',
+    "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
     extend: {},
@@ -15,7 +16,10 @@ export default {
   plugins: [
     require('flowbite/plugin'),
     require('preline/plugin'),
+    require("tw-elements/dist/plugin.cjs"),
+    
 
   ],
+  darkMode: "class"
 }
 
