@@ -1,0 +1,126 @@
+.navbar{
+    background-color: #096ca3
+    padding 30px;
+}
+
+body.darkmode {
+    background: rgb(57, 57, 57);
+    color: rgb(227, 227, 227);
+}
+
+body.lightmode{
+  background: rgb(57, 57, 57);
+  color:#096ca3;
+}
+
+.card{
+  border-radius: 2vh;
+}
+
+/* CSS untuk animasi saat scroll */
+.navbar-scroll-up {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-scroll-down {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* CSS untuk efek animasi pada banner */
+.banner {
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.banner.active {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+.btn.instagram {
+  transition: transform 0.2s ease-in-out;
+  border-radius: 50px;
+}
+
+.btn.instagram:hover {
+  transform: scale(1.1); 
+}
+
+.btn.instagram:active {
+  transform: scale(1);
+  border-radius: 0; /* Menghapus radius sudut untuk membuatnya menjadi kotak */
+}
+
+.social{
+  transition: transform 0.3s ease;
+}
+
+.social:hover{
+  transform: scale(1.5);
+}
+
+.warna1 {
+  color: black; /* Change this to your desired text color in light mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  .warna1 {
+    color: white; /* Change this to your desired text color in dark mode */
+  }
+}
+
+.warna2{ 
+  color: #CA965C;
+}
+
+.warnatulisan{
+  color: #F4DFBA;
+}
+
+.text-color{
+    color: #f4f3f1;
+}
+
+.text{
+  font-size:medium;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.no-decoration{
+  text-decoration: none;
+  color-scheme: dark;
+  color: grey;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 18px;
+  }
+
+  /* Middle column */
+.column.middle {
+    width: 50%;
+  }
+
+  /* Left and right column */
+.column.side {
+    width: 25%;
+  }
+  
+  /* Clear floats after the columns */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width:600px) {
+    .column {
+      width: 100%;
+    }
+  }

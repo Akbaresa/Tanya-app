@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ5Kf5BI5Fj2f" crossorigin="anonymous">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" /> -->
+
+<script>
+  // JavaScript untuk mendeteksi scroll dan menambah/menghapus class animasi pada navbar
+  var prevScrollPos = window.pageYOffset;
+
+  window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      var navbar = document.querySelector(".navbar");
+
+      if (prevScrollPos > currentScrollPos) {
+          // Scroll up
+          navbar.classList.entries("navbar-scroll-down");
+          navbar.classList.add("navbar-scroll-up");
+      } else {
+          // Scroll down
+          navbar.classList.entries("navbar-scroll-up");
+          navbar.classList.add("navbar-scroll-down");
+      }
+
+      prevScrollPos = currentScrollPos;
+  };
+</script>
+    
+</head>
+<body>
+    <!-- navbar -->
+
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container navbar me-5 me-auto ">   
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav text-color">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Docs</a>
+            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="home.html">Home</a></li>
+              <li><a class="dropdown-item" href="login.html">Login</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">About Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-center ms-auto" id="navbarSupportedContent">
+        <form class="d-flex text-color me-5 me-auto">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+      </div>
+      
+
+      <!-- switch mode -->
+      <div class="form-check form-switch mx-4 text-color">
+        Switch Mode
+        <input 
+          class="form-check-input p-2"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          checked
+          onclick="myFunction()"
+        />
+      </div>
+
+      <script>
+        function myFunction(){
+          var element = document.body;
+          element.dataset.bsTheme = element.dataset.bsTheme == "light" ? "dark" : "light";
+        }
+      </script>
+      <!-- switch mode end  -->
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- main content -->
+  <div class="container-fluid banner d-flex align-items-center">
+    <div class="container text-center">
+      <div class="row banner d-flex">
+        <div class="column side">
+          <h2>Get General</h2>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 1</a></p>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 2</a></p>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 3</a></p>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 4</a></p>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 5</a></p>
+          <p><a class="link-opacity-100 no-decoration ms-4 text" href="#">Halaman 6</a></p>
+        </div>
+        
+        <div class="column middle">
+          <h1 class="warna2" href="Main-content">Main Content</h1>
+          <h5 class="mt-4">WELCOME</h5>
+          <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</h5>
+        </div>
+
+        <div class="column side">
+          <h2>Location</h2>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 1</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 2</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 3</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 4</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 5</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 6</a></p>
+          <p><a class="link-opacity-100 no-decoration me-3 text" href="#">Tempat 7</a></p>
+        </div>
+        <div class="col-md-8 offset-md-2">
+          <div 
+            class="input-group input-group-lg my-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <div class="row">
+    <div class="col-2">
+      <nav id="navbar-example3" class="h-50 flex-column align-items-stretch border-end">
+        <nav class="nav nav-pills flex-column">
+          <a class="nav-link" href="#item-1">Home</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+            <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+          </nav>
+          <a class="nav-link" href="#item-2">Item 2</a>
+          <a class="nav-link" href="#item-3">Item 3</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+            <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+          </nav>
+        </nav>
+      </nav>
+    </div>
+  
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+        <div id="item-1">
+          <h2>Get Started</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est illum ipsum quis suscipit at animi expedita a corporis, commodi id nihil asperiores mollitia? Quasi error voluptatem dicta porro, quod nulla quos impedit? Dignissimos pariatur aliquam minima omnis commodi officia deleniti, aut veritatis nemo quod iure eius minus perspiciatis sunt repellendus sit possimus laudantium itaque maxime laborum, consequuntur dolores hic!</p>
+        </div>
+        <div id="item-1-1">
+          <h5>Item 1-1</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque dicta voluptatibus a eligendi atque natus laborum rerum eveniet velit, non quas, reiciendis quidem molestiae distinctio fugit tempore hic sit suscipit minima porro perferendis vel in dolor! Laborum dolor sapiente officia fuga deleniti accusantium cupiditate repellendus iste soluta placeat. Illum excepturi ducimus consequuntur porro ad hic quisquam quasi nobis earum ullam!</p>
+        </div>
+        <div id="item-1-2">
+          <h5>Item 1-2</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam explicabo omnis perspiciatis similique voluptatibus earum ipsum voluptas deleniti commodi officia aliquam asperiores nisi excepturi, reiciendis voluptate dolor sunt ut. Sequi, quis! Magnam, necessitatibus voluptatem ut sit ratione assumenda consequatur optio perferendis, harum qui eum animi architecto explicabo, excepturi cumque molestiae praesentium. Distinctio error accusamus asperiores dolorum facere consequatur assumenda quam at magni mollitia, quibusdam, culpa modi libero nulla voluptas. Officia unde similique, aliquam nihil voluptatibus sint provident repudiandae quae hic dolore temporibus esse repellendus dolores, odio nobis.</p>
+        </div>
+        <div id="item-2">
+          <h4>Item 2</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non voluptate quos architecto at, aliquid soluta nobis ut iste eum ullam corporis dolores, ea consequatur. Corrupti reiciendis similique laboriosam numquam doloremque pariatur, aliquam, minima exercitationem blanditiis, id dicta voluptatibus nisi quia unde deserunt minus! Omnis expedita delectus cupiditate optio quod nemo, officia quia facilis dolores illum necessitatibus, accusamus eligendi laboriosam corporis! Aperiam aliquam optio dicta quidem provident aut quis totam quod modi, quae quaerat debitis ea magnam, mollitia voluptas nemo?</p>
+        </div>
+        <div id="item-3">
+          <h4>Item 3</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eius molestias illum iure unde praesentium pariatur nihil doloremque ducimus fuga. Id, totam enim culpa atque molestiae recusandae. Accusantium tempore ut, iure minima quam maxime ipsa officia saepe, dolores hic libero, neque necessitatibus quod vero tempora? Suscipit quis at nam, inventore provident modi! Possimus ratione numquam earum!</p>
+        </div>
+        <div id="item-3-1">
+          <h5>Item 3-1</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, totam ea at incidunt eos nisi reprehenderit ipsam necessitatibus illo quos consequatur excepturi quod doloremque accusamus ullam quae deleniti ab eveniet accusantium exercitationem ipsa ut. Voluptate odit sint ipsum, reiciendis tenetur corrupti alias molestias unde, eius quia tempore dicta illum consequatur. Ipsum adipisci, numquam amet impedit voluptate cumque aliquid vero tempora corrupti expedita? Impedit, quod ipsam.</p>
+        </div>
+        <div id="item-3-2">
+          <h5>Item 3-2</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae saepe nesciunt adipisci officia natus, veniam recusandae earum quo non asperiores consequuntur ducimus velit repudiandae doloribus quos, atque animi cupiditate excepturi in maxime? Expedita molestias doloribus culpa voluptatibus ut eius exercitationem?</p>
+        </div>
+      </div>
+    </div> -->
+    <!-- main-content end -->
+
+    <!-- Creator -->
+
+    <div class="container-fluid py-5">
+      <div class="container text-center">
+        <h3>Creator</h3>
+      
+          <div class="row mt-5 border-danger">
+              <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+                  <div class="card h-100">
+                      <img src="tlou.jpg" class="card-img-top" alt="">
+                      <div class="card-body">
+                          <h4 class="card-title">Ananda Mega Pratama</h4>
+                          <p class="card-text text-truncate">Deskripsi</p>
+                          <p class="card-text text-har">Teks tambahan</p>
+                          <a href="#" class="btn warna2 instagram">Instagram</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+                  <div class="card h-100">
+                      <img src="tlou2.jpg" class="card-img-top" alt="">
+                      <div class="card-body">
+                          <h4 class="card-title">Maulana Akbar Esa Putra</h4>
+                          <p class="card-text text-truncate">Deskripsi</p>
+                          <p class="card-text text-har">Teks tambahan </p>
+                          <a href="#" class="btn warna2 instagram">Instagram</a>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+                  <div class="card h-100">
+                      <img src="Switzerland.jpg" class="card-img-top" alt="">
+                      <div class="card-body">
+                          <h4 class="card-title">Mohammad Fondasa Endana</h4>
+                          <p class="card-text text-truncate">Deskripsi </p>
+                          <p class="card-text text-har">Teks tambahan</p>
+                          <a href="#" class="btn warna2 instagram">Instagram</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="container-fluid py-5 content-subscribe warna2">
+      <div class="container">
+          <h5 class="text-center mb-5"> Temui Kami </h5>
+          <div class="row justify-content-center">
+              <div class="col-sm-1 d-flex justify-content-center mb-4">
+                 <a href="https://www.facebook.com/fonda.endana"><i class="fab fa-facebook fs-2 warna2 social"></a></i>
+              </div>
+              <div class="col-sm-1 d-flex justify-content-center mb-4">
+                 <a href="https://www.instagram.com/fondaendana_"><i class="fab fa-instagram fs-2 warna2 social"></a></i>
+              </div>
+              <div class="col-sm-1 d-flex justify-content-center mb-4">
+                 <a href="https://youtube.com/@fondaendana6072"><i class="fab fa-youtube fs-2 warna2 social"></a></i>
+              </div>
+              <div class="col-sm-1 d-flex justify-content-center mb-4">
+                  <i class="fab fa-twitter fs-2"></i>
+              </div>
+              <div class="col-sm-1 d-flex justify-content-center mb-4">
+                  <i class="fab fa-whatsapp fs-2"></i>
+              </div>
+          </div>
+  
+          <P class="text-center font-monospace"> MORE INFORMATION </P>
+          <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Ketikan Email"
+                      aria-label="Recipient's username"
+                      aria-describedby="button-addon2">
+                  <button class="btn btn-warning text-light" type="button" 
+                  id="button-addon2"> SUBSCRIBE </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="container-fluid py-3 bg-dark text-light">
+          <div class="container d-flex justify-content-between">
+              <label for="">&copy; 2023 Survey App</label>
+              <label for="">Created by App Survey</label>
+          </div>
+      </div>
+      <a href=""></a>
+      <!-- footer end -->
+  
+  
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="fontawesome/fontawesome/js/all.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</body>
+</html>
