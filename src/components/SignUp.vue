@@ -132,8 +132,8 @@ export default {
           this.showNotificationMessage('Pengguna berhasil terdaftar', 'success');
 
           setTimeout(() => {
-            this.$router.push('/beranda');
-          }, 10000); 
+            this.$router.push('/login');
+          }, 3000); 
         })
         .catch(error => {
           console.error(error);
@@ -155,7 +155,7 @@ export default {
       // Sembunyikan notifikasi setelah beberapa detik
       setTimeout(() => {
         this.showNotification = false;
-      }, 5000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
+      }, 2000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
     },
   },
 };

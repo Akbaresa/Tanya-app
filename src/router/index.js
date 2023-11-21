@@ -28,7 +28,7 @@ const router = createRouter({
     {
         path: '/profile',
         name: 'profile',
-        components: () => import('../views/Profile.vue') 
+        component: ()  => import('../views/Profile.vue')
     }
     ]
 })
@@ -37,10 +37,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     const isAuthenticated = localStorage.getItem('token');
     if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-      // Jika rute memerlukan otentikasi dan pengguna belum login, redirect ke halaman login
       next('/login');
     } else {
-
+        
       next();
     }
   });

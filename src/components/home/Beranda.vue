@@ -18,18 +18,73 @@
               <a href="" class="hover:underline">Jawab</a>
             </div>
           </div>
+
+          
+          <div v-if="loading" class="h-[90%]">
+
+            <div role="status" class="max-w-full mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+              <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
+                  <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
+                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+                  </svg>
+              </div>
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              <div class="flex items-center mt-4">
+                 <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                  </svg>
+                  <div>
+                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+                      <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+                  </div>
+              </div>
+              <span class="sr-only">Loading...</span>
+          </div>
+            <div role="status" class="max-w-full mt-3 mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+              <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
+                  <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
+                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+                  </svg>
+              </div>
+              <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+              <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              <div class="flex items-center mt-4">
+                 <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                  </svg>
+                  <div>
+                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+                      <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+                  </div>
+              </div>
+              <span class="sr-only">Loading...</span>
+          </div>
+          
+          </div>
+
         </div>
+        
 
 
-        <div class="relative" id="content" v-for="pertanyaan in pertanyaanList" :key="pertanyaan.id">
+        <div  class="relative" id="content" v-for="pertanyaan in pertanyaanList" :key="pertanyaan.id">
+
+
+
 
           <div
             class="block mt-2 mx-auto rounded-lg  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-gray-800 w-[60%]">
             <div class="border-b-2 px-6 flex py-3 border-gray-800 ">
               <img class="w-10 h-10 rounded-full ml-2 mt-2 mr-3" src="/image/profil1.png" alt="Rounded avatar">
               <div>
-                <a type="button" class="flex items-center mt-1 hover:underline cursor-pointer text-teal-400"
-                  @mouseover="showPopover" @mouseleave="hidePopover">{{ pertanyaan.username }}</a>
+                <a type="button" class="flex items-center mt-1 hover:underline cursor-pointer text-teal-400">{{
+                  pertanyaan.username }}</a>
                 <p class="text-sm text-gray-400">{{ pertanyaan.tanggal }}</p>
               </div>
             </div>
@@ -37,6 +92,12 @@
               <div class="px-2">
                 <p class="font-semibold">{{ pertanyaan.header }}</p>
                 <p>{{ pertanyaan.deskripsi }}</p>
+                <div v-if="pertanyaan.gambarList && pertanyaan.gambarList.length > 0">
+                  <div v-for="gambar in pertanyaan.gambarList" :key="gambar.id" class="mb-4">
+                    <img :src="gambar.sumber" alt="Gambar" style="max-width: 300px; margin-bottom: 10px;">
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -44,7 +105,7 @@
               <div class="flex flex-row gap-x-3">
                 <button type="button"
                   class="text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
-                  
+
                   <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                     viewBox="0 0 18 18">
                     <path
@@ -62,7 +123,6 @@
                 </button>
               </div>
 
-              <!-- ... Your other code ... -->
 
               <form @submit.prevent="postKomentar(pertanyaan.id)">
                 <label for="chat" class="sr-only">Pesan Komentar</label>
@@ -81,10 +141,6 @@
                   </button>
                 </div>
               </form>
-
-              <!-- ... Your other code ... -->
-
-
 
               <div class="max-h-0 overflow-hidden overflow-y-auto transition-max-h duration-700 ease-in-out"
                 aria-valuetext="close" :id="pertanyaan.id">
@@ -107,68 +163,75 @@
             </div>
           </div>
         </div>
+
+
+        
+
+
       </div>
     </div>
-    <transition name="notification-slide">
-      <div v-if="showNotification && notificationType === 'success'"
-        class="overflow-hidden fixed top-20 right-6 space-y-4 bg-teal-50 border-t-2 border-teal-500 rounded-lg p-4 dark:bg-teal-800/30"
-        role="alert">
-        <div class="flex">
-          <div class="flex-shrink-0">
-            <!-- Icon -->
-            <span
-              class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-teal-100 bg-teal-200 text-teal-800 dark:border-teal-900 dark:bg-teal-800 dark:text-teal-400">
-              <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                <path d="m9 12 2 2 4-4" />
-              </svg>
-            </span>
-            <!-- End Icon -->
-          </div>
-          <div class="ms-3">
-            <h3 class="text-gray-800 font-semibold dark:text-white">
-              Berhasil
-            </h3>
-            <p class="text-sm text-gray-700 dark:text-gray-400">
-              {{ notificationMessage }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </transition>
-
-    <transition name="notification-slide">
-      <div v-if="showNotification && notificationType === 'error'"
-        class="overflow-hidden fixed top-20 right-6 space-y-4 bg-red-50 border-s-4 border-red-500 p-4 dark:bg-red-800/30 "
-        role="alert">
-        <div class="flex">
-          <div class="flex-shrink-0">
-            <!-- Icon -->
-            <span
-              class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-red-100 bg-red-200 text-red-800 dark:border-red-900 dark:bg-red-800 dark:text-red-400">
-              <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </span>
-            <!-- End Icon -->
-          </div>
-          <div class="ms-3">
-            <h3 class="text-gray-800 font-semibold dark:text-white">
-              Gagal!
-            </h3>
-            <p class="text-sm text-gray-700 dark:text-gray-400">
-              {{ notificationMessage }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </transition>
+    
   </div>
+  
+  <transition name="notification-slide">
+    <div v-if="showNotification && notificationType === 'success'"
+      class="overflow-hidden fixed top-20 right-6 space-y-4 bg-teal-50 border-t-2 border-teal-500 rounded-lg p-4 dark:bg-teal-800/30"
+      role="alert">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <!-- Icon -->
+          <span
+            class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-teal-100 bg-teal-200 text-teal-800 dark:border-teal-900 dark:bg-teal-800 dark:text-teal-400">
+            <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </span>
+          <!-- End Icon -->
+        </div>
+        <div class="ms-3">
+          <h3 class="text-gray-800 font-semibold dark:text-white">
+            Berhasil
+          </h3>
+          <p class="text-sm text-gray-700 dark:text-gray-400">
+            {{ notificationMessage }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </transition>
+
+  <transition name="notification-slide">
+    <div v-if="showNotification && notificationType === 'error'"
+      class="overflow-hidden fixed top-20 right-6 space-y-4 bg-red-50 border-s-4 border-red-500 p-4 dark:bg-red-800/30 "
+      role="alert">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <!-- Icon -->
+          <span
+            class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-red-100 bg-red-200 text-red-800 dark:border-red-900 dark:bg-red-800 dark:text-red-400">
+            <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </span>
+          <!-- End Icon -->
+        </div>
+        <div class="ms-3">
+          <h3 class="text-gray-800 font-semibold dark:text-white">
+            Gagal!
+          </h3>
+          <p class="text-sm text-gray-700 dark:text-gray-400">
+            {{ notificationMessage }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </transition>
 </template>
   
 <script>
@@ -186,7 +249,9 @@ export default {
       showNotification: false,
       notificationType: '',
       notificationMessage: '',
-      notifGagal: ''
+      notifGagal: '',
+      gambarList: [],
+      newPertanyaan: []
     };
   },
   name: "Beranda",
@@ -202,7 +267,8 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
 
     // Panggil fungsi untuk mengambil data saat komponen dimuat
-    this.fetchPertanyaanData();
+    // this.fetchPertanyaanData();
+    this.fetchDataLazyLoad();
   },
   created() {
     // Navigation Guard: Dipanggil saat komponen dibuat
@@ -222,35 +288,65 @@ export default {
     checkAuthentication() {
       const isAuthenticated = localStorage.getItem('token');
       if (this.$route.meta.requiresAuth && !isAuthenticated) {
-        // Jika rute memerlukan otentikasi dan pengguna belum login,
-        // Anda dapat menangani tindakan di sini, seperti mengarahkan ke halaman login
+
         this.$router.push('/login');
       }
     },
-    async fetchPertanyaanData() {
+    async fetchDataLazyLoad() {
       try {
+        if (this.loading || this.noMoreData) {
+          return;
+        }
+
         this.loading = true;
 
-        // Ganti URL sesuai dengan endpoint backend Anda
+        const token = localStorage.getItem('token');
         const response = await axios.get('http://localhost:8091/api/beranda-test', {
           params: {
             currentPage: this.currentPage,
             itemsPerPage: this.itemsPerPage
           }
         });
+
         const newPertanyaan = response.data;
 
         if (newPertanyaan.length > 0) {
-          this.pertanyaanList = [
-            ...this.pertanyaanList,
-            ...newPertanyaan];
-          this.currentPage++;
-          if (this.pertanyaanList.length >= 45) {
-            this.noMoreData = true;
+          for (const pertanyaan of newPertanyaan) {
+            pertanyaan.gambarList = [];
+
+            if (pertanyaan.gambar && pertanyaan.gambar.length > 0) {
+              for (const gambar of pertanyaan.gambar) {
+                console.log(gambar)
+                const gambarResponse = await axios.get(`http://localhost:8091/api/gambar/${gambar}`, {
+                  responseType: 'arraybuffer',
+                  headers: {
+                    'X-API-TOKEN': token
+                  }
+                });
+
+                const contentType = gambarResponse.headers['content-type'];
+                const base64Image = this.arrayBufferToBase64(gambarResponse.data);
+
+                pertanyaan.gambarList.push({
+                  id: gambar,
+                  sumber: `data:${contentType};base64,${base64Image}`,
+                });
+              }
+            }
           }
 
+          this.pertanyaanList = [
+            ...this.pertanyaanList,
+            ...newPertanyaan
+          ];
+
+          this.currentPage++;
+
+          if (newPertanyaan.length < this.itemsPerPage) {
+            this.noMoreData = true;
+          }
         } else {
-          // Tidak ada data baru, berhenti memuat
+          // No more data, stop loading
           this.noMoreData = true;
         }
       } catch (error) {
@@ -259,6 +355,61 @@ export default {
         this.loading = false;
       }
     },
+
+    arrayBufferToBase64(buffer) {
+      let binary = '';
+      const bytes = new Uint8Array(buffer);
+      const len = bytes.byteLength;
+
+      for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+      }
+
+      return btoa(binary);
+    },
+
+    async loadMoreData() {
+      await this.fetchDataLazyLoad();
+    },
+
+    // async fetchPertanyaanData() {
+    //   try {
+    //     this.loading = true;
+
+    //     // Ganti URL sesuai dengan endpoint backend Anda
+    //     const response = await axios.get('http://localhost:8091/api/beranda-test', {
+    //       params: {
+    //         currentPage: this.currentPage,
+    //         itemsPerPage: this.itemsPerPage
+    //       }
+    //     }).then(response => {
+    //       const newPertanyaan = response.data;
+    //       console.log(newPertanyaan.id)
+    //       if (newPertanyaan.length > 0) {
+    //         console.log(response)
+    //         this.pertanyaanList = [
+    //           ...this.pertanyaanList,
+    //           ...newPertanyaan];
+    //         this.currentPage++;
+
+    //         if (this.pertanyaanList.length >= newPertanyaan.totalSize) {
+    //           this.noMoreData = true;
+    //         }
+
+    //       } else {
+    //         // Tidak ada data baru, berhenti memuat
+    //         this.noMoreData = true;
+    //       }
+
+    //     });
+
+
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //   } finally {
+    //     this.loading = false;
+    //   }
+    // },
 
     handleScroll() {
       if (this.noMoreData) {
@@ -271,7 +422,7 @@ export default {
 
       if (scrollPosition >= pageHeight - 300 && !this.loading) {
         // Memuat data tambahan saat mendekati bagian bawah halaman
-        this.fetchPertanyaanData();
+        this.fetchDataLazyLoad();
       }
     },
 
@@ -290,12 +441,13 @@ export default {
     },
     async postKomentar(pertanyaanId) {
       try {
+        const token = localStorage.getItem('token');
         const response = await axios.post('http://localhost:8091/api/komentar', {
           deskripsi: this.komen[pertanyaanId],
           idPertanyaan: pertanyaanId,
         }, {
           headers: {
-            'X-API-TOKEN': `token14`
+            'X-API-TOKEN': token
           }
         }).then(response => {
           console.log(response.data);
@@ -373,7 +525,8 @@ export default {
 .notification-slide-leave-to {
   transform: translateX(50%);
   opacity: 0;
-}</style>
+}
+</style>
   
   
   

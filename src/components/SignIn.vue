@@ -12,20 +12,20 @@
             </h1>
             <form class="space-y-4 md:space-y-6" action="#" @submit.prevent="submitForm">
               <div>
-                <label for="username" class="block mb-2 text-sm font-medium text-white">Username</label>
+                <label for="username" class="block cursor-auto mb-2 text-sm font-medium text-white">Username</label>
                 <input v-model="formData.username" type="text" name="username" id="username"
                   class=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                   placeholder="masukkan username" required>
               </div>
               <div>
-                <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
+                <label for="password" class="block mb-2 cursor-auto text-sm font-medium text-white">Password</label>
                 <input v-model="formData.password" type="password" name="password" id="password" placeholder="••••••••"
                   class=" border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white "
                   required>
               </div>
   
               <button type="submit"
-                class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800">Login</button>
+                class="w-full text-white bg-blue-600 cursor-pointer hover:bg-blue-700 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800">Login</button>
               <p class="text-sm font-light text-gray-500 ">
                 Belum mempunyai Akun? <a href="signup" class="font-small text-blue-600 hover:underline ">Daftar dulu</a>
               </p>
@@ -134,7 +134,7 @@
 
             setTimeout(() => {
               this.$router.push('/');
-            }, 6000);
+            }, 2000);
           })
           .catch(error => {
             console.error(error);
@@ -155,7 +155,7 @@
         // Sembunyikan notifikasi setelah beberapa detik
         setTimeout(() => {
           this.showNotification = false;
-        }, 5000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
+        }, 1000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
       },
     },
   };

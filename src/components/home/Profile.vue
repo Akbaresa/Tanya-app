@@ -1,12 +1,12 @@
 <template>
-    <div class=" h-screen bg-gray-700">
-      <div>
+    <div class="h-screen bg-gray-700">
+      <div class="mt-10">
         <div class="flex flex-row justify-between ml-20 mr-20 flex-none pt-20">
           <div class="flex container w-3/5">
             <div onmouseenter="imgHover()" onmouseleave="imgHover()" class="w-36 h-36 relative flex-none overflow-hidden rounded-full hover:cursor-pointer">
               <div>
                 <img
-                src=""
+                src="/image/esa.png"
                 alt=""
                 style="margin-top: -20px;"
               />
@@ -14,18 +14,18 @@
               
               
               <div class="absolute top-0 left-0 w-full h-full  items-center justify-center hidden" id="imgSwap">
-                <img alt="" src="/asset/img/pen.png" class="w-16 h-16 cursor-pointer" />
+                <img alt="" src="" class="w-16 h-16 cursor-pointer" />
               </div>
             </div>
       
-            <div class="font-medium ml-5 w-full relative">
+            <div class="font-medium ml-5 w-full relativfe">
               <div class="flex">
                 <div class="flex-none">
-                  <div class="text-gray-500 text-2xl">Ananda Mega Pratama</div>
+                  <div class="text-gray-500 text-2xl">{{userData.username}}</div>
                 </div>
               </div>
               <button class="outline-2 absolute w-7 h-7 top-0 left-[70%] outline outline-gray-500 rounded-full overflow-hidden">
-                <img src="/asset/img/share_2.png" alt="" class="object-center mx-auto w-5 h-auto">
+                <img src="" alt="" class="object-center mx-auto w-5 h-auto">
               </button>
               
               <a href="#" class="text-sm text-gray-500 text-grey-500 hover:underline">Tambahkan Kredensial Profile</a>
@@ -41,7 +41,7 @@
               <div class="flex">
                 <div class="text-white w-[200%]">Kredensial & Sorotan</div>
                 <button>
-                  <img src="/asset/img/pen_2.png" alt="" class="w-[15%] ml-[30%]">
+                  <img src="" alt="" class="w-[15%] ml-[30%]">
                 </button>
               </div>
   
@@ -61,25 +61,25 @@
         <div class="flex ml-20 mr-20">
           <div class="flex container w-3/5 ">
             <div class="ml-5 text-sm font-medium text-start grid-rows-2  border-b text-gray-400 border-gray-700">
-              <a href="#" class="font-medium text-grey-600 text-grey-500 hover:underline">Tuliskan Deskripsi Anda</a>
+              <a href="#" class="font-medium text-grey-600 text-grey-500 hover:underline">{{userData.email}}</a>
               <ul class="flex flex-wrap -mb -px">
                 <li class="mr-2">
                   <button
                     href="#"
                     class="inline-block p-4 border-b-2 text-slate-200 border-transparent hover:border-red-600 focus:border-red-600" 
-                    >Profile
+                    >history
                   </button>
                 </li>
                 <li class="mr-2">
                   <a href="#" class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active "
                     aria-current="page"
-                    >Dashboard</a>
+                    >pertanyaan</a>
                 </li>
                 <li class="mr-2">
                   <a
                     href="#"
                     class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 "
-                    >Settings</a
+                    >komentar</a
                   >
                 </li>
                 <li class="mr-2">
@@ -87,12 +87,6 @@
                     href="#"
                     class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 "
                     >Contacts</a
-                  >
-                </li>
-                <li>
-                  <a
-                    class="inline-block p-4  rounded-t-lg cursor-not-allowed text-gray-500"
-                    >Disabled</a
                   >
                 </li>
               </ul>
@@ -134,21 +128,39 @@
       
   </template>
   
-  <script>
-  export default {
-      setup () {
-          return {}
-      }
-  }
-  const imgHover = ()=>{
-          document.getElementById("imgSwap").classList.toggle('hidden')
-        }
-  </script>
-  
-  <style scoped>
-  
-  .body{
-    background-color: #374151;
-    color: #374151;
-   }
-  </style>
+<script>
+import axios from 'axios';
+
+export  default{
+    data(){
+        return{
+            userData: {},
+        };
+    },
+    mounted(){
+        this.getUserData();
+    },
+    methods: {
+        async getUserData() {
+            try {
+                // Mendapatkan token dari penyimpanan lokal
+                const token = localStorage.getItem('token');
+                console.log("token " + token)
+                // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
+                const response = await axios.get('http://localhost:8091/api/user/current', {
+                    headers: {
+                        'X-API-TOKEN': token,
+                    },
+                });
+
+                // Tanggapi berhasil: Setel data pengguna
+                this.userData = response.data.data;
+                console.log(this.userData)
+            } catch (error) {
+                // Tangani kesalahan jika ada
+                console.error('Gagal mengambil data pengguna:', error);
+            }
+        },
+    },
+}
+</script>

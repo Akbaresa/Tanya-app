@@ -10,7 +10,6 @@
             <div class="flex justify-center mx-auto">
                 <ul
                     class="flex flex-col p-4 md:p-0  font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
-
                     <div class="flex">
                         <li>
                             <div class="mr-3 pr-3">
@@ -80,7 +79,7 @@
 
 
                         <div id="dropdownAvatar"
-                            class="z-10 absolute w-[300%] top-12 hidden text-gray-400 bg-gray-600 divide-y divide-gray-100 rounded-lg shadow w-[calc(100% - 2rem)] bg-gray-700 divide-gray-600">
+                            class="z-10 absolute w-[300%] top-12 hidden text-gray-400 bg-gray-600 divide-y divide-gray-100 rounded-lg shadow w-[calc(100% - 2rem)] bg-gray-700 divide-gray-600 border-2 border-gray-600">
                             <ul class="py-2 text-sm text-gray-200" aria-labelledby="dropdownAvatarNameButton">
                                 <li>
                                     <RouterLink to="/profile">
@@ -451,7 +450,8 @@ export default {
                         console.log(response.data);
                         this.postData.header = '';
                         this.postData.deskripsi = '';
-                        this.uploadImage(response.data.id)
+                        console.log('id pertanyaan '+ response.data.data.id)
+                        this.uploadImage(response.data.data.id)
                         this.closeModal();
                         this.showNotificationMessage('Pertanyaann berhasil terkirim', 'success');
 
@@ -488,7 +488,7 @@ export default {
                     this.showNotificationMessage('berhasil logout', 'success')
                     setTimeout(() => {
                         this.$router.push('/login');
-                    }, 6000)
+                    },2000)
                 }).catch(error)(error => {
                     console.error(error);
                     this.showNotificationMessage('Terjadi kesalahan. Silakan coba lagi.', 'error');
@@ -501,7 +501,7 @@ export default {
 
             } catch (error) {
                 // Tangani kesalahan jika ada
-                this.showNotificationMessage('gagal logout', 'error')
+                // this.showNotificationMessage('gagal logout', 'error')
 
             }
         },
@@ -559,23 +559,18 @@ export default {
       },
 
       async uploadImage(idPertanyaan) {
+        const fileInput = this.$refs.imageInput;
       if (this.selectedImage) {
+        console.log(this.selectedImage)
         const formData = new FormData();
-        formData.append('gambar', this.selectedImage);
+        formData.append('gambar', fileInput.files[0]);
         const token = localStorage.getItem('token');
-        const params = {
-      // Daftar parameter di sini jika diperlukan
-        pertanyaan : idPertanyaan,
-        };
-
-        const headers = {
-        'X-API-TOKEN': token,
-        };
 
         try {
-          const response = await axios.post('http://localhost:8091/api/upload-gambar', formData, {
-            params: params,
-            headers: headers
+          const response = await axios.post(`http://localhost:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, formData, {
+            headers: {
+                'X-API-TOKEN': token,
+            }
           });
 
           console.log('Gambar berhasil diunggah:', response.data);

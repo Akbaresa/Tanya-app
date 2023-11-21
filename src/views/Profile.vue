@@ -1,9 +1,11 @@
 <script setup>
-import profile from '../components/profile.vue'
+import Orang from '../components/home/Profile.vue'
+import Navbar from '../components/home/Navbar.vue';
 </script>
 
 <template>
     <div>
-        <profile></profile>
+        <Navbar></Navbar>
+        <Orang></Orang>
     </div>
 </template>
