@@ -13,11 +13,11 @@
                     <div class="flex">
                         <li>
                             <div class="mr-3 pr-3">
-                                <div href="#" to="/"
+                                <RouterLink f="#" to="/"
                                     class="block mt-1 text-white cursor-pointer bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                                     aria-current="page">
                                     <img src="/image/home linear.png" class="w-7 " alt="">
-                                </div>
+                                </RouterLink>
                             </div>
                         </li>
 
