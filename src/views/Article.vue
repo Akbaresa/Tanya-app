@@ -1,5 +1,5 @@
 <script setup>
-import Article from '../components/article.vue'
+import Article from '../components/Article.vue';
 import NavbarVue from '../components/home/Navbar.vue';
 </script>
 
