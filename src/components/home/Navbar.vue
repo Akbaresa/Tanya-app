@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <nav class=" bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -408,8 +409,6 @@
 <script>
 import axios from 'axios';
 export default {
-
-    name: "Pertanyaan",
     data() {
         return {
             activeTab: 'profile',
@@ -441,7 +440,7 @@ export default {
         async postDataToApi() {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.post('http://localhost:8091/api/pertanyaan', this.postData, {
+                await axios.post('https://hapless-linen-production.up.railway.app/api/pertanyaan', this.postData, {
                     headers: {
                         'X-API-TOKEN': token
                     }
@@ -478,7 +477,7 @@ export default {
                 const token = localStorage.getItem('token');
 
                 // Kirim permintaan logout ke server
-                await axios.delete('http://localhost:8091/api/auth/logout', {
+                await axios.delete('https://hapless-linen-production.up.railway.app/api/auth/logout', {
                     headers: {
                         'X-API-TOKEN': token
                     }
@@ -489,7 +488,7 @@ export default {
                     setTimeout(() => {
                         this.$router.push('/login');
                     },2000)
-                }).catch(error)(error => {
+                }).catch()(error => {
                     console.error(error);
                     this.showNotificationMessage('Terjadi kesalahan. Silakan coba lagi.', 'error');
                     if (error.response) {
@@ -511,7 +510,7 @@ export default {
                 const token = localStorage.getItem('token');
                 console.log("token " + token)
                 // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
-                const response = await axios.get('http://localhost:8091/api/user/current', {
+                const response = await axios.get('https://hapless-linen-production.up.railway.app/api/user/current', {
                     headers: {
                         'X-API-TOKEN': token,
                     },
@@ -567,7 +566,7 @@ export default {
         const token = localStorage.getItem('token');
 
         try {
-          const response = await axios.post(`http://localhost:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, formData, {
+          const response = await axios.post(`https://hapless-linen-production.up.railway.app/api/upload-gambar?pertanyaan=${idPertanyaan}`, formData, {
             headers: {
                 'X-API-TOKEN': token,
             }

@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="h-screen bg-gray-700">
       <div class="mt-10">
@@ -147,7 +148,7 @@ export  default{
                 const token = localStorage.getItem('token');
                 console.log("token " + token)
                 // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
-                const response = await axios.get('http://localhost:8091/api/user/current', {
+                const response = await axios.get('https://hapless-linen-production.up.railway.app/api/user/current', {
                     headers: {
                         'X-API-TOKEN': token,
                     },

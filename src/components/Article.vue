@@ -1,9 +1,4 @@
-<script>
-import { RouterLink } from 'vue-router';
-
-
-</script>
-
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div>
         <div class="border-gray-200 bg-gray-700 h-[100rem] text-gray-200">

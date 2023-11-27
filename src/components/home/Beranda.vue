@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/multi-word-component-names -->
+<!-- eslint-disable vue/no-use-v-if-with-v-for -->
 <template>
   <div>
     <div class="border-gray-200 bg-gray-700 h-[100%] text-gray-200">
@@ -149,6 +151,7 @@
 
               <div class="max-h-0 overflow-hidden overflow-y-auto transition-max-h duration-700 ease-in-out"
                 aria-valuetext="close" :id="pertanyaan.id">
+                // eslint-disable-next-line vue/no-use-v-if-with-v-for
                 <div class="flex flex-row  py-2" v-if="pertanyaan.komentar.length > 0"
                   v-for="komentar in pertanyaan.komentar" :key="komentar.idKomentar">
                   <img src="/image/esa.png" alt="" class="w-10 mb-1 h-10 rounded-full">
@@ -259,7 +262,6 @@ export default {
       newPertanyaan: []
     };
   },
-  name: "Beranda",
   setup() {
     return {
       textVisible: false,
@@ -281,11 +283,11 @@ export default {
   },
   watch: {
     // Watcher untuk memantau perubahan rute
-    $route(to, from) {
+    $route() {
       this.checkAuthentication();
     },
   },
-  destroyed() {
+  unmounted() {
     // Hapus event listener saat komponen dihancurkan
     window.removeEventListener('scroll', this.handleScroll);
   },
@@ -306,7 +308,7 @@ export default {
         this.loading = true;
 
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8091/api/beranda-test', {
+        const response = await axios.get('https://hapless-linen-production.up.railway.app/api/beranda-test', {
           params: {
             currentPage: this.currentPage,
             itemsPerPage: this.itemsPerPage
@@ -322,7 +324,7 @@ export default {
             if (pertanyaan.gambar && pertanyaan.gambar.length > 0) {
               for (const gambar of pertanyaan.gambar) {
                 console.log(gambar)
-                const gambarResponse = await axios.get(`http://localhost:8091/api/gambar/${gambar}`, {
+                const gambarResponse = await axios.get(`https://hapless-linen-production.up.railway.app/api/gambar/${gambar}`, {
                   responseType: 'arraybuffer',
                   headers: {
                     'X-API-TOKEN': token
@@ -377,55 +379,15 @@ export default {
       await this.fetchDataLazyLoad();
     },
 
-    // async fetchPertanyaanData() {
-    //   try {
-    //     this.loading = true;
-
-    //     // Ganti URL sesuai dengan endpoint backend Anda
-    //     const response = await axios.get('http://localhost:8091/api/beranda-test', {
-    //       params: {
-    //         currentPage: this.currentPage,
-    //         itemsPerPage: this.itemsPerPage
-    //       }
-    //     }).then(response => {
-    //       const newPertanyaan = response.data;
-    //       console.log(newPertanyaan.id)
-    //       if (newPertanyaan.length > 0) {
-    //         console.log(response)
-    //         this.pertanyaanList = [
-    //           ...this.pertanyaanList,
-    //           ...newPertanyaan];
-    //         this.currentPage++;
-
-    //         if (this.pertanyaanList.length >= newPertanyaan.totalSize) {
-    //           this.noMoreData = true;
-    //         }
-
-    //       } else {
-    //         // Tidak ada data baru, berhenti memuat
-    //         this.noMoreData = true;
-    //       }
-
-    //     });
-
-
-    //   } catch (error) {
-    //     console.error('Error fetching data:', error);
-    //   } finally {
-    //     this.loading = false;
-    //   }
-    // },
-
     handleScroll() {
       if (this.noMoreData) {
         // Jika tidak ada lagi data untuk dimuat, hentikan pemrosesan
         return;
       }
 
-      const scrollPosition = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
 
-      if (scrollPosition >= pageHeight - 300 && !this.loading) {
+      if (window.scrollY === pageHeight && !this.loading) {
         // Memuat data tambahan saat mendekati bagian bawah halaman
         this.fetchDataLazyLoad();
       }
@@ -447,7 +409,7 @@ export default {
     async postKomentar(pertanyaanId) {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.post('http://localhost:8091/api/komentar', {
+        const response = await axios.post('https://hapless-linen-production.up.railway.app/api/komentar', {
           deskripsi: this.komen[pertanyaanId],
           idPertanyaan: pertanyaanId,
         }, {

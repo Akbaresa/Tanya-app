@@ -125,7 +125,7 @@
     methods: {
       submitForm() {
         // Kirim permintaan POST ke backend menggunakan Axios
-        axios.post('http://localhost:8091/api/auth/user', this.formData)
+        axios.post('https://hapless-linen-production.up.railway.app/api/auth/user', this.formData)
           .then(response => {
             console.log(response.data);
             this.showNotificationMessage('Berhasil Login', 'success');

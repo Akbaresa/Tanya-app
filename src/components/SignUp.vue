@@ -126,7 +126,7 @@ export default {
       }
 
       // Kirim permintaan POST ke backend menggunakan Axios
-      axios.post('http://localhost:8091/api/users', this.formData)
+      axios.post('https://hapless-linen-production.up.railway.app/api/users', this.formData)
         .then(response => {
           console.log(response.data);
           this.showNotificationMessage('Pengguna berhasil terdaftar', 'success');
