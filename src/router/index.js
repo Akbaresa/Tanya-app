@@ -41,10 +41,14 @@ const router = createRouter({
 // Middleware untuk mengecek otentikasi sebelum masuk ke rute
 router.beforeEach((to, from, next) => {
     const isAuthenticated = localStorage.getItem('token');
+  
+    // Jika rute membutuhkan otentikasi dan tidak ada token, arahkan ke /login
     if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
       next('/login');
-    } else {
-        
+    }else if (localStorage.getItem('token') == 0){
+      next('/login');
+    }
+    else {
       next();
     }
   });
