@@ -291,6 +291,7 @@ export default {
   created() {
     // Navigation Guard: Dipanggil saat komponen dibuat
     this.checkAuthentication();
+    localStorage.removeItem('token');
   },
   watch: {
     // Watcher untuk memantau perubahan rute
