@@ -21,25 +21,30 @@
             </div>
           </div>
 
-          
+
           <div v-if="loading" class="h-[90%]">
 
-            <div role="status" class="max-w-full mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+            <div role="status"
+              class="max-w-full mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
               <div class="flex items-center mt-4">
-                <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                     <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
-                 </svg>
-                 <div>
-                     <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
-                     <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
-                 </div>
-             </div>
+                <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+                </svg>
+                <div>
+                  <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+                  <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+                </div>
+              </div>
 
               <div class="flex items-center mt-2 justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
-                  <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
-                      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
-                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
-                  </svg>
+                <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                  <path
+                    d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+                  <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+                </svg>
               </div>
               <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
               <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
@@ -47,23 +52,28 @@
               <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
 
               <span class="sr-only">Loading...</span>
-          </div>
-            <div role="status" class="max-w-full mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+            </div>
+            <div role="status"
+              class="max-w-full mx-auto p-4 border  rounded shadow animate-pulse md:p-6 dark:border-gray-700">
               <div class="flex items-center mt-4">
-                <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                     <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
-                 </svg>
-                 <div>
-                     <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
-                     <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
-                 </div>
-             </div>
+                <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
+                </svg>
+                <div>
+                  <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+                  <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+                </div>
+              </div>
 
               <div class="flex items-center mt-2 justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
-                  <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
-                      <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
-                      <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
-                  </svg>
+                <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                  <path
+                    d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+                  <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+                </svg>
               </div>
               <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
               <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
@@ -71,19 +81,16 @@
               <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
 
               <span class="sr-only">Loading...</span>
-          </div>
+            </div>
 
-          
+
           </div>
 
         </div>
-        
-
-
-        <div  class="relative" id="content" v-for="pertanyaan in pertanyaanList" :key="pertanyaan.id">
 
 
 
+        <div class="relative" id="content" v-for="pertanyaan in pertanyaanList" :key="pertanyaan.id">
 
           <div
             class="block mt-2 mx-auto rounded-lg  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-gray-800 w-[60%]">
@@ -101,9 +108,10 @@
                 <p class="mb-2">{{ pertanyaan.deskripsi }}</p>
                 <div v-if="pertanyaan.gambarList && pertanyaan.gambarList.length > 0">
                   <div v-for="gambar in pertanyaan.gambarList" :key="gambar.id" class="mb-4">
-                    <img :src="gambar.sumber" alt="Gambar" style="max-width: 300px; margin-bottom: 10px;">
+                    <CloudImage :path="gambar.path" />
                   </div>
                 </div>
+
 
               </div>
             </div>
@@ -151,7 +159,6 @@
 
               <div class="max-h-0 overflow-hidden overflow-y-auto transition-max-h duration-700 ease-in-out"
                 aria-valuetext="close" :id="pertanyaan.id">
-                // eslint-disable-next-line vue/no-use-v-if-with-v-for
                 <div class="flex flex-row  py-2" v-if="pertanyaan.komentar.length > 0"
                   v-for="komentar in pertanyaan.komentar" :key="komentar.idKomentar">
                   <img src="/image/esa.png" alt="" class="w-10 mb-1 h-10 rounded-full">
@@ -173,14 +180,14 @@
         </div>
 
 
-        
+
 
 
       </div>
     </div>
-    
+
   </div>
-  
+
   <transition name="notification-slide">
     <div v-if="showNotification && notificationType === 'success'"
       class="overflow-hidden fixed top-20 right-6 space-y-4 bg-teal-50 border-t-2 border-teal-500 rounded-lg p-4 dark:bg-teal-800/30"
@@ -243,6 +250,7 @@
 </template>
   
 <script>
+import CloudImage from '../CloudImage.vue';
 import axios from 'axios';
 export default {
   middleware: 'auth',
@@ -251,7 +259,7 @@ export default {
       pertanyaanList: [],
       loading: false, // Hanya satu kali
       currentPage: 1,
-      itemsPerPage: 10,
+      itemPerPage: 3,
       noMoreData: false,
       komen: {},
       showNotification: false,
@@ -261,6 +269,9 @@ export default {
       gambarList: [],
       newPertanyaan: []
     };
+  },
+  components: {
+    CloudImage
   },
   setup() {
     return {
@@ -311,32 +322,28 @@ export default {
         const response = await axios.get('https://hapless-linen-production.up.railway.app/api/beranda-test', {
           params: {
             currentPage: this.currentPage,
-            itemsPerPage: this.itemsPerPage
+            itemPerPage: this.itemPerPage
           }
         });
-
+        console.log(this.itemsPerPage)
         const newPertanyaan = response.data;
-
+        console.log(newPertanyaan[0].totalSize)
         if (newPertanyaan.length > 0) {
           for (const pertanyaan of newPertanyaan) {
             pertanyaan.gambarList = [];
 
             if (pertanyaan.gambar && pertanyaan.gambar.length > 0) {
               for (const gambar of pertanyaan.gambar) {
-                console.log(gambar)
+                console.log(gambar);
                 const gambarResponse = await axios.get(`https://hapless-linen-production.up.railway.app/api/gambar/${gambar}`, {
-                  responseType: 'arraybuffer',
                   headers: {
                     'X-API-TOKEN': token
                   }
                 });
-
-                const contentType = gambarResponse.headers['content-type'];
-                const base64Image = this.arrayBufferToBase64(gambarResponse.data);
-
+                console.log(gambarResponse.data.data.path)
                 pertanyaan.gambarList.push({
-                  id: gambar,
-                  sumber: `data:${contentType};base64,${base64Image}`,
+                  id: gambarResponse.data.data.id,
+                  path: gambarResponse.data.data.path,
                 });
               }
             }
@@ -348,31 +355,23 @@ export default {
           ];
 
           this.currentPage++;
-
-          if (newPertanyaan.length < this.itemsPerPage) {
+          // console.log("length" + newPertanyaan.length)
+          if (newPertanyaan.length < this.itemPerPage) {
             this.noMoreData = true;
+            if (this.noMoreData) {
+              window.removeEventListener('scroll', this.handleScroll);
+            }
           }
+
         } else {
-          // No more data, stop loading
           this.noMoreData = true;
         }
       } catch (error) {
         console.error('Error fetching data:', error);
+        this.noMoreData = true;
       } finally {
         this.loading = false;
       }
-    },
-
-    arrayBufferToBase64(buffer) {
-      let binary = '';
-      const bytes = new Uint8Array(buffer);
-      const len = bytes.byteLength;
-
-      for (let i = 0; i < len; i++) {
-        binary += String.fromCharCode(bytes[i]);
-      }
-
-      return btoa(binary);
     },
 
     async loadMoreData() {
@@ -380,18 +379,25 @@ export default {
     },
 
     handleScroll() {
+      console.log('Scroll event triggered.');
+
       if (this.noMoreData) {
-        // Jika tidak ada lagi data untuk dimuat, hentikan pemrosesan
+        console.log('tidak ada data');
         return;
       }
 
-      const pageHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-      if (window.scrollY === pageHeight && !this.loading) {
-        // Memuat data tambahan saat mendekati bagian bawah halaman
+      // Check if the user is close to the bottom
+      if (scrollTop + windowHeight >= documentHeight - 100 && !this.loading) {
+        console.log('Fetching more data...');
         this.fetchDataLazyLoad();
       }
     },
+
+
 
     lihatKomen(coy) {
       const element = document.getElementById(coy)
@@ -492,8 +498,7 @@ export default {
 .notification-slide-leave-to {
   transform: translateX(50%);
   opacity: 0;
-}
-</style>
+}</style>
   
   
   

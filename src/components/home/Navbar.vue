@@ -408,6 +408,7 @@
 
 <script>
 import axios from 'axios';
+import { put } from "@vercel/blob";
 export default {
     data() {
         return {
@@ -559,18 +560,23 @@ export default {
 
       async uploadImage(idPertanyaan) {
         const fileInput = this.$refs.imageInput;
-      if (this.selectedImage) {
-        console.log(this.selectedImage)
-        const formData = new FormData();
-        formData.append('gambar', fileInput.files[0]);
-        const token = localStorage.getItem('token');
+            if (this.selectedImage) {
+            console.log(this.selectedImage)
+            const formData = new FormData();
+            formData.append('gambar', fileInput.files[0]);
+            const token = localStorage.getItem('token');
+
+            const { url } = await put(`/images/${fileInput.name}`)
+            console.log(url);
+            
 
         try {
-          const response = await axios.post(`https://hapless-linen-production.up.railway.app/api/upload-gambar?pertanyaan=${idPertanyaan}`, formData, {
-            headers: {
+          const response = await axios.post(`http:127.0.0.1:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, {
+            header: {
                 'X-API-TOKEN': token,
-            }
-          });
+            },
+            body: formData
+          })
 
           console.log('Gambar berhasil diunggah:', response.data);
           // Tambahkan logika lain yang diperlukan setelah unggah gambar berhasil
