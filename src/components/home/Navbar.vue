@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <nav class=" bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-600">
+    <nav class=" bg-gray-900 fixed w-full top-0 left-0 border-b border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="flex item-center">
                 <div class="flex justify-center pr-3">
@@ -10,7 +10,7 @@
             </div>
             <div class="flex justify-center mx-auto">
                 <ul
-                    class="flex flex-col p-4 md:p-0  font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
+                    class="">
                     <div class="flex">
                         <li>
                             <div class="mr-3 pr-3">
