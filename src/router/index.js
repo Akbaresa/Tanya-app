@@ -34,6 +34,11 @@ const router = createRouter({
         path: '/test',
         name: 'test',
         component: () => import('../views/test-all.vue')
+    },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      component: () => import('../components/home/NavbarRev.vue')
     }
     ]
 })

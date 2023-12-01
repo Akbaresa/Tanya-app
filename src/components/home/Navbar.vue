@@ -10,7 +10,7 @@
             </div>
             <div class="flex justify-center mx-auto">
                 <ul
-                    class="">
+                    class="flex flex-col p-4 md:p-0 font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
                     <div class="flex">
                         <li>
                             <div class="mr-3 pr-3">
@@ -21,20 +21,7 @@
                                 </RouterLink>
                             </div>
                         </li>
-
-                        <li>
-                            <div to="/modul/content">
-                                <div class="group fixed">
-                                    <img src="/image/article white.png"
-                                        class="w-9 group-hover:hidden cursor-pointer group-hover:border-b-2 group-hover:border-white transition duration-200 ease-in-out"
-                                        alt="">
-                                    <img src="/image/artice active.png"
-                                        class="w-9 inset-0 opacity-0 cursor-pointer group-hover:opacity-100 " alt="">
-                                </div>
-                            </div>
-                        </li>
                     </div>
-
                     <div class="flex">
                         <li>
                             <div class="flex ml-3 pl-3">
