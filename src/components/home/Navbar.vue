@@ -13,25 +13,11 @@
                     class="flex flex-col p-4 md:p-0  font-medium border  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
                     <div class="flex">
                         <li>
-                            <div class="mr-3 pr-3">
-                                <RouterLink f="#" to="/"
-                                    class="block mt-1 text-white cursor-pointer bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
-                                    aria-current="page">
-                                    <img src="/image/home linear.png" class="w-7 " alt="">
-                                </RouterLink>
-                            </div>
-                        </li>
-
-                        <li>
-                            <div to="/modul/content">
-                                <div class="group fixed">
-                                    <img src="/image/article white.png"
-                                        class="w-9 group-hover:hidden cursor-pointer group-hover:border-b-2 group-hover:border-white transition duration-200 ease-in-out"
-                                        alt="">
-                                    <img src="/image/artice active.png"
-                                        class="w-9 inset-0 opacity-0 cursor-pointer group-hover:opacity-100 " alt="">
-                                </div>
-                            </div>
+                            <RouterLink f="#" to="/"
+                                class="block mt-1 text-white cursor-pointer bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
+                                aria-current="page">
+                                <img src="/image/home linear.png" class="w-7 " alt="">
+                            </RouterLink>
                         </li>
                     </div>
 
@@ -97,10 +83,10 @@
                                         class="block px-4 py-2 font-light hover:bg-gray-600 hover:cursor-pointer hover-text-gray-200">Setting</a>
                                 </li>
                                 <li>
-               
-                                        <a type="button" @click="logout"
-                                            class="block px-4 py-2 font-light hover:bg-gray-600 hover:cursor-pointer hover-text-gray-200">Keluar</a>
-                                    
+
+                                    <a type="button" @click="logout"
+                                        class="block px-4 py-2 font-light hover:bg-gray-600 hover:cursor-pointer hover-text-gray-200">Keluar</a>
+
                                 </li>
                             </ul>
                         </div>
@@ -120,7 +106,7 @@
 
                             <!-- Main modal -->
                             <div class="fixed overflow-hidden overflow-y-auto top-20 left-0 right-0 flex justify-center items-center"
-                                v-show="showModal"  aria-hidden="true">
+                                v-show="showModal" aria-hidden="true">
                                 <!-- Modal content -->
                                 <div
                                     class="relative rounded-lg shadow bg-gray-700 w-full max-w-2xl border border-solid border-gray-500 p-4">
@@ -197,25 +183,21 @@
                                                                     </button>
                                                                     <button type="button"
                                                                         class="p-2 text-gray-500 rounded cursor-pointer    hover:text-white hover:bg-gray-600">
-                                                                        <label for="imageInput" class=" text-gray-500 rounded cursor-pointer hover:text-white hover:bg-gray-600">
+                                                                        <label for="imageInput"
+                                                                            class=" text-gray-500 rounded cursor-pointer hover:text-white hover:bg-gray-600">
                                                                             <svg class="w-4 h-4" aria-hidden="true"
-                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                            fill="currentColor" viewBox="0 0 16 20">
-                                                                            <path
-                                                                                d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
-                                                                            <path
-                                                                                d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
-                                                                        </svg>
-                                                                        <span class="sr-only">Upload image</span>
-                                                                          </label>
-                                                                          <input
-                                                                            id="imageInput"
-                                                                            type="file"
-                                                                            class="hidden"
-                                                                            ref="imageInput"
-                                                                            @change="handleImageUpload"
-                                                                            accept="image/*"
-                                                                          />
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                fill="currentColor" viewBox="0 0 16 20">
+                                                                                <path
+                                                                                    d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z" />
+                                                                                <path
+                                                                                    d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z" />
+                                                                            </svg>
+                                                                            <span class="sr-only">Upload image</span>
+                                                                        </label>
+                                                                        <input id="imageInput" type="file" class="hidden"
+                                                                            ref="imageInput" @change="handleImageUpload"
+                                                                            accept="image/*" />
 
                                                                         <!-- <input type="file" @change="handleImageUpload" accept="image/*"> -->
                                                                     </button>
@@ -314,15 +296,20 @@
                                                                 class="block w-full px-0 text-sm text-gray-200  border-0 bg-gray-800 focus:ring-0  placeholder-gray-400"
                                                                 placeholder="Tulis tambahan isi" required></textarea>
 
-                                                                <div v-if="imagePreview">
-                                                                    <img :src="imagePreview" alt="Preview" class="w-24 object-cover rounded" />
-                                                                    <button @click="removeImagePreview" class="p-2 bg-red-500 text-white">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-                                                                          </svg>
-                                                                    </button>
-                                                                  </div>
-                                                                <!-- <img src="/image/esa.png" alt="" class="w-12 mb-1 h-12 rounded-full"> -->
+                                                            <div v-if="imagePreview">
+                                                                <img :src="imagePreview" alt="Preview"
+                                                                    class="w-24 object-cover rounded" />
+                                                                <button @click="removeImagePreview"
+                                                                    class="p-2 bg-red-500 text-white">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                                        height="16" fill="currentColor" class="bi bi-x-lg"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <!-- <img src="/image/esa.png" alt="" class="w-12 mb-1 h-12 rounded-full"> -->
                                                         </div>
                                                     </div>
                                                     <!-- endInformasiTambahan -->
@@ -450,7 +437,7 @@ export default {
                         console.log(response.data);
                         this.postData.header = '';
                         this.postData.deskripsi = '';
-                        console.log('id pertanyaan '+ response.data.data.id)
+                        console.log('id pertanyaan ' + response.data.data.id)
                         this.uploadImage(response.data.data.id)
                         this.closeModal();
                         this.showNotificationMessage('Pertanyaann berhasil terkirim', 'success');
@@ -485,10 +472,10 @@ export default {
                 }).then(response => {
                     console.log(response.data)
                     localStorage.removeItem('token'),
-                    this.showNotificationMessage('berhasil logout', 'success')
+                        this.showNotificationMessage('berhasil logout', 'success')
                     setTimeout(() => {
                         this.$router.push('/login');
-                    },2000)
+                    }, 2000)
                 }).catch()(error => {
                     console.error(error);
                     this.showNotificationMessage('Terjadi kesalahan. Silakan coba lagi.', 'error');
@@ -536,56 +523,56 @@ export default {
             }, 5000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
         },
         handleImageUpload(event) {
-        const file = event.target.files[0];
-  
-        if (file) {
-          // Membuat pratinjau gambar
-          const imageUrl = URL.createObjectURL(file);
-  
-          this.imagePreview = imageUrl;
-          this.selectedImage = file;
-        }
-      },
-      removeImagePreview() {
-        // Menghapus pratinjau gambar
-        this.imagePreview = null;
-        this.selectedImage = null;
+            const file = event.target.files[0];
 
-          // Reset nilai input file
-        const inputElement = this.$refs.imageInput;
-        if (inputElement) {
-            inputElement.value = null;
-        }
-      },
+            if (file) {
+                // Membuat pratinjau gambar
+                const imageUrl = URL.createObjectURL(file);
 
-      async uploadImage(idPertanyaan) {
-        const fileInput = this.$refs.imageInput;
+                this.imagePreview = imageUrl;
+                this.selectedImage = file;
+            }
+        },
+        removeImagePreview() {
+            // Menghapus pratinjau gambar
+            this.imagePreview = null;
+            this.selectedImage = null;
+
+            // Reset nilai input file
+            const inputElement = this.$refs.imageInput;
+            if (inputElement) {
+                inputElement.value = null;
+            }
+        },
+
+        async uploadImage(idPertanyaan) {
+            const fileInput = this.$refs.imageInput;
             if (this.selectedImage) {
-            console.log(this.selectedImage)
-            const formData = new FormData();
-            formData.append('gambar', fileInput.files[0]);
-            const token = localStorage.getItem('token');
+                console.log(this.selectedImage)
+                const formData = new FormData();
+                formData.append('gambar', fileInput.files[0]);
+                const token = localStorage.getItem('token');
 
-            const { url } = await put(`/images/${fileInput.name}`)
-            console.log(url);
-            
+                const { url } = await put(`/images/${fileInput.name}`)
+                console.log(url);
 
-        try {
-          const response = await axios.post(`http:127.0.0.1:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, {
-            header: {
-                'X-API-TOKEN': token,
-            },
-            body: formData
-          })
 
-          console.log('Gambar berhasil diunggah:', response.data);
-          // Tambahkan logika lain yang diperlukan setelah unggah gambar berhasil
-        } catch (error) {
-          console.error('Error mengunggah gambar:', error);
-          // Tambahkan logika lain yang diperlukan jika terjadi kesalahan
-        }
-      }
-    },
+                try {
+                    const response = await axios.post(`http:127.0.0.1:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, {
+                        header: {
+                            'X-API-TOKEN': token,
+                        },
+                        body: formData
+                    })
+
+                    console.log('Gambar berhasil diunggah:', response.data);
+                    // Tambahkan logika lain yang diperlukan setelah unggah gambar berhasil
+                } catch (error) {
+                    console.error('Error mengunggah gambar:', error);
+                    // Tambahkan logika lain yang diperlukan jika terjadi kesalahan
+                }
+            }
+        },
 
     },
 

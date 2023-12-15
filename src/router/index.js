@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import Beranda from '../views/BerandaView.vue'
 
 const router = createRouter({

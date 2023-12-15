@@ -1,6 +1,6 @@
 <template>
     <meta name="google-signin-client_id" content="1006870554827-sgofe1fj6gdjmqq8ir1ga1nf5ivba604.apps.googleusercontent.com">
-        <section class=" bg-gray-900 body">
+        <section class=" bg-gray-900 body h-screen">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
     <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
       <img class="w-8 h-8 mr-2" src="/image/tanya.png" alt="logo">
@@ -185,4 +185,7 @@ export default {
   overflow: hidden;
 }
 
+body {
+  border: 1px solid blueviolet;
+}
 </style>

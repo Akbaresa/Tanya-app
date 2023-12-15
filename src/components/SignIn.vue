@@ -1,5 +1,5 @@
 <template>
-    <section class=" bg-gray-900 body">
+    <section class=" bg-gray-900 h-screen body">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
           <img class="w-12 h-12 mr-2" src="/image/tanya.png" alt="logo">
