@@ -428,7 +428,7 @@ export default {
         async postDataToApi() {
             try {
                 const token = localStorage.getItem('token');
-                await axios.post('https://hapless-linen-production.up.railway.app/api/pertanyaan', this.postData, {
+                await axios.post('http://localhost:8091/api/pertanyaan', this.postData, {
                     headers: {
                         'X-API-TOKEN': token
                     }
@@ -465,7 +465,7 @@ export default {
                 const token = localStorage.getItem('token');
 
                 // Kirim permintaan logout ke server
-                await axios.delete('https://hapless-linen-production.up.railway.app/api/auth/logout', {
+                await axios.delete('http://localhost:8091/api/auth/logout', {
                     headers: {
                         'X-API-TOKEN': token
                     }
@@ -498,7 +498,7 @@ export default {
                 const token = localStorage.getItem('token');
                 console.log("token " + token)
                 // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
-                const response = await axios.get('https://hapless-linen-production.up.railway.app/api/user/current', {
+                const response = await axios.get('http://localhost:8091/api/user/current', {
                     headers: {
                         'X-API-TOKEN': token,
                     },
