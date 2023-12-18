@@ -23,7 +23,7 @@
                             Berhasil
                         </h3>
                         <p class="text-sm text-gray-700 dark:text-gray-400">
-                            {{ notificationMessage }}
+                            {{ notip }}
                         </p>
                     </div>
                 </div>
@@ -35,16 +35,25 @@
 <script>
 export default {
     props:{
-        notificationMessage: String
+        notip: String,
+        showNotification: String,
+        notificationType: String
     },
     setup () {
-        
-
         return {}
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.notification-slide-enter-active,
+.notification-slide-leave-active {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s ease;
+}
 
+.notification-slide-enter,
+.notification-slide-leave-to {
+    transform: translateX(50%);
+    opacity: 0;
+}
 </style>

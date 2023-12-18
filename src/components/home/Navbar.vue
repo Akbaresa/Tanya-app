@@ -394,8 +394,9 @@
 </template>
 
 <script>
+import { storage } from "../../storage/firebase";
+import { ref , uploadBytes } from "firebase/storage";
 import axios from 'axios';
-import { put } from "@vercel/blob";
 export default {
     props:{
         active: Boolean
@@ -413,6 +414,10 @@ export default {
             notificationMessage: '',
             notifGagal: '',
             userData: {},
+            postDataGambar : {
+                namaGambar: '',
+                path: ''
+            },
             imagePreview: null,
             selectedImage: null,
         };
@@ -549,23 +554,31 @@ export default {
         },
 
         async uploadImage(idPertanyaan) {
-            const fileInput = this.$refs.imageInput;
+            const fileInput = this.$refs.imageInput.files[0];
             if (this.selectedImage) {
+                const pathGambar = `folder/${idPertanyaan}.png`;
                 console.log(this.selectedImage)
-                const formData = new FormData();
-                formData.append('gambar', fileInput.files[0]);
+                const storageRef = ref(storage , pathGambar)
+
+                uploadBytes(
+                    storageRef,
+                    fileInput
+                ).then((snapshot) => {
+                    console.log("berhasil")
+                    console.log(snapshot)
+                })
                 const token = localStorage.getItem('token');
-
-                const { url } = await put(`/images/${fileInput.name}`)
-                console.log(url);
-
+                this.postDataGambar.namaGambar = idPertanyaan;
+                this.postDataGambar.path = pathGambar;
+                // const { url } = await put(`/images/${fileInput.name}`)
+                // console.log(url);
 
                 try {
-                    const response = await axios.post(`http:127.0.0.1:8091/api/upload-gambar?pertanyaan=${idPertanyaan}`, {
-                        header: {
+                    const response = await axios.post(`http://localhost:8091/api/gambar?pertanyaan=${idPertanyaan}` , this.postDataGambar,{
+                        headers : {
                             'X-API-TOKEN': token,
-                        },
-                        body: formData
+                        }
+                        
                     })
 
                     console.log('Gambar berhasil diunggah:', response.data);

@@ -25,7 +25,7 @@ export default {
     methods: {
         upload: function() {
             console.log(this.$refs.myFile.files[0])
-            const storageRef = ref(storage , 'storage/gambar_.png')
+            const storageRef = ref(storage , 'folder/orang.png')
             uploadBytes(storageRef , this.$refs.myFile.files[0])
             .then((snapshot) =>{
                 console.log("berhasil")

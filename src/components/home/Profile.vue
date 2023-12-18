@@ -45,11 +45,17 @@
             <div class="border-b-2 w-[82%] mt-3"></div>
 
             <div class="flex-none mt-5">
-              <button @click="openModal" type="button" href="" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img src="/image/briefcase.png"
-                  alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5" >Tambahkan Kredensial Pekerjaan</button>
+              <button @click="openModal" v-if="kredensialPekerjaan"  type="button" href="" class="text-base mt-2 flex text-blue-500 gap-2"><img src="/image/briefcase.png"
+                  alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5" ><p class=" text-white no-underline">{{pekerjaan}}</p>  <p class=" hover:underline">edit</p> </button>
+
+              <button @click="openModal" v-else  type="button" href="" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img src="/image/briefcase.png"
+                    alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5" >Tambahkan Kredensial Pekerjaan false</button>
 
                   
-                <ModalPekerjaan :closeModal="closeModal" :showModal="showModal"></ModalPekerjaan>
+                <ModalPekerjaan 
+                :data="pekerjaanData"
+                :closeModal="closeModal" 
+                :showModal="showModal"></ModalPekerjaan>
 
 
 
@@ -223,9 +229,13 @@ export default {
     return {
       activeTab: 'pertanyaan',
       userData: {},
+      pekerjaanData: {},
+      pekerjaan: '',
+      username: '',
       showModal: false,
       showModalPendidikan: false,
-      showModalLokasi:false
+      showModalLokasi:false,
+      kredensialPekerjaan: false
     };
   },
   components:{
@@ -235,17 +245,16 @@ export default {
   },
   mounted() {
     this.getUserData();
+    this.getKredensialPekerjaan();
   },
   methods: {
     openModal() {
-      console.log("test")
       this.showModal = true;
     },
     closeModal() {
       this.showModal = false;
     },
     openModalPendidikan() {
-      console.log("test")
       this.showModalPendidikan = true;
       this.showModal = false;
     },
@@ -253,7 +262,6 @@ export default {
       this.showModalPendidikan = false;
     },
     openModalLokasi() {
-      console.log("test")
       this.showModalLokasi = true;
     },
     closeModalLokasi() {
@@ -266,7 +274,6 @@ export default {
       try {
         // Mendapatkan token dari penyimpanan lokal
         const token = localStorage.getItem('token');
-        console.log("token " + token)
         // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
         const response = await axios.get('http://localhost:8091/api/user/current', {
           headers: {
@@ -276,7 +283,10 @@ export default {
 
         // Tanggapi berhasil: Setel data pengguna
         this.userData = response.data.data;
-        console.log(this.userData)
+        console.log(this.userData.username)
+        const username = this.userData.username
+        this.username = username
+        this.getKredensialPekerjaan(username)
       } catch (error) {
         // Tangani kesalahan jika ada
         console.error('Gagal mengambil data pengguna:', error);
@@ -293,6 +303,22 @@ export default {
                 this.showNotification = false;
             }, 5000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
         },
+
+    async getKredensialPekerjaan(username, token){
+      const response = await axios.get(`http://localhost:8091/api/pekerjaan/${username}`, {
+          headers:{
+            'X-API-TOKEN': token,
+          }
+      })
+
+        this.pekerjaanData = response.data.data
+
+        this.pekerjaan = this.pekerjaanData.posisi + " di " + this.pekerjaanData.perusahaan + " dari " + this.pekerjaanData.tahunMulai + " sampai " + this.pekerjaanData.tahunSelesai
+        this.kredensialPekerjaan = true
+
+        console.log(this.pekerjaanData)
+      
+    }
   },
 }
 </script>
