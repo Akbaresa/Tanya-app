@@ -48,13 +48,20 @@
               <button @click="openModal" type="button" href="" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img src="/image/briefcase.png"
                   alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5" >Tambahkan Kredensial Pekerjaan</button>
 
+                  
+                <ModalPekerjaan :closeModal="closeModal" :showModal="showModal"></ModalPekerjaan>
 
 
-              <a href="" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img
+
+              <button @click="openModalPendidikan" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img
                   src="/image/mortarboard_2.png" alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5">Tambahkan Kredensial
-                Pendidikan</a>
-              <a href="" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img src="/image/location_2.png"
-                  alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5">Tambahkan Kredensial Lokasi</a>
+                Pendidikan</button>
+
+                <ModalPendidikan :closeModal="closeModalPendidikan" :showModal="showModalPendidikan"></ModalPendidikan>
+
+              <button @click="openModalLokasi" class="text-base mt-2 flex hover:underline text-blue-500 gap-2"><img src="/image/location_2.png"
+                  alt="icon pekerjaan" class="w-5 h-5 mr-1 mt-0.5">Tambahkan Kredensial Lokasi</button>
+                  <ModalLokasi :showModal="showModalLokasi" :closeModal="closeModalLokasi"></ModalLokasi>
             </div>
           </div>
         </div>
@@ -144,22 +151,87 @@
         </div>
       </div>
     </div>
+    <transition name="notification-slide">
+      <div v-if="showNotification && notificationType === 'success'"
+          class="overflow-hidden fixed top-20 right-6 space-y-4 bg-teal-50 border-t-2 border-teal-500 rounded-lg p-4 dark:bg-teal-800/30"
+          role="alert">
+          <div class="flex">
+              <div class="flex-shrink-0">
+                  <!-- Icon -->
+                  <span
+                      class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-teal-100 bg-teal-200 text-teal-800 dark:border-teal-900 dark:bg-teal-800 dark:text-teal-400">
+                      <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                          <path d="m9 12 2 2 4-4" />
+                      </svg>
+                  </span>
+                  <!-- End Icon -->
+              </div>
+              <div class="ms-3">
+                  <h3 class="text-gray-800 font-semibold dark:text-white">
+                      Berhasil
+                  </h3>
+                  <p class="text-sm text-gray-700 dark:text-gray-400">
+                      {{ notificationMessage }}
+                  </p>
+              </div>
+          </div>
+      </div>
+  </transition>
+  <transition name="notification-slide">
+    <div v-if="showNotification && notificationType === 'error'"
+        class="overflow-hidden fixed top-20 right-6 space-y-4 bg-red-50 border-s-4 border-red-500 p-4 dark:bg-red-800/30 "
+        role="alert">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <!-- Icon -->
+                <span
+                    class="inline-flex justify-center items-center w-8 h-8 rounded-full border-4 border-red-100 bg-red-200 text-red-800 dark:border-red-900 dark:bg-red-800 dark:text-red-400">
+                    <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </span>
+                <!-- End Icon -->
+            </div>
+            <div class="ms-3">
+                <h3 class="text-gray-800 font-semibold dark:text-white">
+                    Gagal!
+                </h3>
+                <p class="text-sm text-gray-700 dark:text-gray-400">
+                    {{ notificationMessage }}
+                </p>
+            </div>
+        </div>
+    </div>
+</transition>
   </div>
 </template>
   
 <script>
+
 import axios from 'axios';
-// import ModalPekerjaan from '../modal/ModalPekerjaan.vue';
+import ModalPekerjaan from '../modal/ModalPekerjaan.vue';
+import ModalPendidikan from '../modal/ModalPendidikan.vue';
+import ModalLokasi from '../modal/ModalLokasi.vue';
 export default {
   data() {
     return {
       activeTab: 'pertanyaan',
       userData: {},
       showModal: false,
+      showModalPendidikan: false,
+      showModalLokasi:false
     };
   },
   components:{
-    
+    ModalPekerjaan,
+    ModalPendidikan,
+    ModalLokasi
   },
   mounted() {
     this.getUserData();
@@ -172,6 +244,21 @@ export default {
     closeModal() {
       this.showModal = false;
     },
+    openModalPendidikan() {
+      console.log("test")
+      this.showModalPendidikan = true;
+      this.showModal = false;
+    },
+    closeModalPendidikan() {
+      this.showModalPendidikan = false;
+    },
+    openModalLokasi() {
+      console.log("test")
+      this.showModalLokasi = true;
+    },
+    closeModalLokasi() {
+      this.showModalLokasi = false;
+    },
     setActiveTab(tab) {
       this.activeTab = tab;
     },
@@ -181,7 +268,7 @@ export default {
         const token = localStorage.getItem('token');
         console.log("token " + token)
         // Mengeksekusi permintaan GET ke endpoint dengan menyertakan token di header
-        const response = await axios.get('https://hapless-linen-production.up.railway.app/api/user/current', {
+        const response = await axios.get('http://localhost:8091/api/user/current', {
           headers: {
             'X-API-TOKEN': token,
           },
@@ -195,6 +282,17 @@ export default {
         console.error('Gagal mengambil data pengguna:', error);
       }
     },
+    showNotificationMessage(message, type) {
+            // Menampilkan notifikasi dengan animasi
+            this.notificationMessage = message;
+            this.notificationType = type;
+            this.showNotification = true;
+
+            // Sembunyikan notifikasi setelah beberapa detik
+            setTimeout(() => {
+                this.showNotification = false;
+            }, 5000); // Ubah angka 5000 sesuai dengan durasi yang diinginkan
+        },
   },
 }
 </script>

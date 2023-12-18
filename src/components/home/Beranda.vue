@@ -319,7 +319,7 @@ export default {
         this.loading = true;
 
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://hapless-linen-production.up.railway.app/api/beranda-test', {
+        const response = await axios.get('http://localhost:8091/api/beranda', {
           params: {
             currentPage: this.currentPage,
             itemPerPage: this.itemPerPage
@@ -335,7 +335,7 @@ export default {
             if (pertanyaan.gambar && pertanyaan.gambar.length > 0) {
               for (const gambar of pertanyaan.gambar) {
                 console.log(gambar);
-                const gambarResponse = await axios.get(`https://hapless-linen-production.up.railway.app/api/gambar/${gambar}`, {
+                const gambarResponse = await axios.get(`http://localhost:8091/api/gambar/${gambar}`, {
                   headers: {
                     'X-API-TOKEN': token
                   }
@@ -415,7 +415,7 @@ export default {
     async postKomentar(pertanyaanId) {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.post('https://hapless-linen-production.up.railway.app/api/komentar', {
+        const response = await axios.post('http://localhost:8091/api/komentar', {
           deskripsi: this.komen[pertanyaanId],
           idPertanyaan: pertanyaanId,
         }, {

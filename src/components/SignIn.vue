@@ -5,6 +5,11 @@
           <img class="w-12 h-12 mr-2" src="/image/tanya.png" alt="logo">
   
         </a>
+
+
+
+
+
         <div class="w-full rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0 bg-gray-800 border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight  md:text-2xl text-white signup">
@@ -125,7 +130,7 @@
     methods: {
       submitForm() {
         // Kirim permintaan POST ke backend menggunakan Axios
-        axios.post('https://hapless-linen-production.up.railway.app/api/auth/user', this.formData)
+        axios.post('http://localhost:8091/api/auth/user', this.formData)
           .then(response => {
             console.log(response.data);
             this.showNotificationMessage('Berhasil Login', 'success');
